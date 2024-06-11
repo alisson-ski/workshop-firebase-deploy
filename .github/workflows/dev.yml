@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-jogs:
+jobs:
   build_and_deploy:
     environment:
       name: firebase
