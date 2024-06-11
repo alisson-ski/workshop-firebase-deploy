@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "workshop-firebase-deploy-raggi"
-  }
+  },
+  "targets": {
+    "workshop-firebase-deploy-raggi": {
+      "hosting": {
+        "dev": [
+          "dev-firebase-deploy-raggi"
+        ],
+        "prod": [
+          "prod-firebase-deploy-raggi"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

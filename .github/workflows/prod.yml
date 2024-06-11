@@ -1,15 +1,15 @@
-name: Deploy to Dev
+name: Deploy to Prod
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build_and_deploy:
     environment:
       name: firebase
-      url: "https://dev-firebase-deploy-raggi.web.app/"
+      url: "https://prod-firebase-deploy-raggi.web.app/"
     runs-on: ubuntu-latest
 
     steps:
@@ -29,6 +29,6 @@ jobs:
 
       - name: Deploy to Firebase
         run: npm install -g firebase-tools
-      - run: firebase deploy --only hosting:dev --token "$FIREBASE_TOKEN"
+      - run: firebase deploy --only hosting:prod --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
